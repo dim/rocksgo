@@ -19,7 +19,7 @@ But, suppose you put the shared rocksdb library somewhere weird like
 /path/to/lib and the headers were installed in /path/to/include. To install
 rocksgo remotely, you'll run:
 
-    CGO_CFLAGS="-I/path/to/rocksdb/include" CGO_LDFLAGS="-L/path/to/rocksdb/lib" go get github.com/jmhodges/rocksgo
+    CGO_CFLAGS="-I/path/to/rocksdb/include" CGO_LDFLAGS="-L/path/to/rocksdb/lib" go get github.com/ananclub/rocksgo
 
 and there you go.
 
