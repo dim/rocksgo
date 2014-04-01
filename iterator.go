@@ -3,6 +3,7 @@ package rocksgo
 // #cgo LDFLAGS: -lrocksdb
 // #include <stdlib.h>
 // #include "rocksdb/c.h"
+// #include "rocksgo.h"
 import "C"
 
 import (

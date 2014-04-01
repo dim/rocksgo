@@ -1,13 +1,17 @@
 # rocksgo
 
-rocksgo is a Go wrapper for rocksdb.
+rocksgo is a golang wrapper for rocksdb.
+
+The API has been godoc'ed and [is available on the
+web](http://godoc.org/github.com/ananclub/rocksgo).
+
+
 
 ## Building
 
 You'll need the shared library build of
-[rocksdb](https://github.com/facebook/rocksdb) installed on your machine. The
+[rocksdb](http://github.com/facebook/rocksdb/) installed on your machine. The
 current rocksdb will build it by default.
-
 
 
 Now, if you build rocksdb and put the shared library and headers in one of the
@@ -19,16 +23,8 @@ But, suppose you put the shared rocksdb library somewhere weird like
 /path/to/lib and the headers were installed in /path/to/include. To install
 rocksgo remotely, you'll run:
 
-    CGO_CFLAGS="-I/path/to/rocksdb/include" CGO_LDFLAGS="-L/path/to/rocksdb/lib" go get github.com/ananclub/rocksgo
-
+    CGO_CFLAGS="-I/path/to/rocksdb/include " CGO_LDFLAGS="-L/path/to/rocksdb/lib -lrocksdb -lstdc++ -lz -lrt" go get github.com/ananclub/rocksgo
 and there you go.
-
-In order to build with snappy, you'll have to explicitly add "-lsnappy" to the
-`CGO_LDFLAGS`. Supposing that both snappy and rocksdb are in weird places,
-you'll run something like:
-
-    CGO_CFLAGS="-I/path/to/rocksdb/include"
-    CGO_LDFLAGS="-L/path/to/rocksdb/lib -lrocksdb" go get github.com/ananclub/rocksgo
 
 
 Of course, these same rules apply when doing `go build`, as well.

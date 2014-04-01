@@ -1,10 +1,12 @@
 package rocksgo
 
 /*
-#cgo LDFLAGS: -L/usr/local/lib64 -L/usr/local/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/ -lrocksdb -lz -lrt -lc -lm -lgcc -lstdc++
+#cgo LDFLAGS: -L../rocksdb -lrocksdb
+#cgo CFLAGS:-I../rocksdb/include
+
 #include <stdlib.h>
 #include "rocksdb/c.h"
-
+#include "rocksgo.h"
 // This function exists only to clean up lack-of-const warnings when
 // rocksdb_approximate_sizes is called from Go-land.
 void rocksgo_rocksdb_approximate_sizes(
